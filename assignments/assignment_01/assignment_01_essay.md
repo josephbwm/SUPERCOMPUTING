@@ -1,0 +1,16 @@
+# Assignment\_01 Essay
+
+My motivation for learning high performance computing are varied. There are a few valid reasons to get out of the way: it cool, it is impressive, it is fast, my laptop is slow, it is useful, it is the future direction of many parts of the sciences (wide ranging or transferable), it is getting cheaper and more accessible. But if I were to boil down and condense it I would say that I just want to add more value to the projects that I work on. 
+
+My goals are to learn, to enjoy said learning, and to complete a cool project. I want to come out of this course ready to contribute to something or start something of my own. I also want to learn data management and good practices in terminal.
+
+My plan for learning is thus far naive. I should really have a better schedule than “do the assignments” adding spaced practices would probably go a long way. Dedicating a small amount of time to explore on my own would probably be helpful. I expect that practice will help more than notes. Hopefully I can experiment without breaking things. I also hope to do a cool project on the identification and quantification of mitochondrial image data, we will see how that goes.
+
+The folder structure I created was a copy of the example. But it is good for reproducibility because it keeps data separate, and separates the raw from the cleaned data. It has a configs file to explicitly list the configurations used and hopefully the environment too as well as the for the tools. The scripts folder gives the code run, the docs folder gives notes and guidance, and the logs folder allows for record keeping, examples, and verification that what is done and what is said matches.
+
+By this I am assuming that we are also talking about the documentation that goes along with the code, not just the in-line comments often referred to as documentation. If you don’t document your code it is usually not as clean of code as it could be. It is not explainable to your future self, or to others who pick up the projects after you are gone. It is part record keeping, part planning, and part instruction. Without step by step instructions you are leaving more ambiguity –issues for reproducibility– than you need to. Furthermore, without versions and parameter inputs the recreation of results can be near impossible even with the same tools. The essential point of documentation is that it tells the human how to use the code to replicate results. Not to mention that it also helps with reducing errors. 
+
+I am relatively new to the terminal and file structures are mystical things that scare me even though I have been working with code for a little while. Computer and operating system organization are not my strong suite.   
+I actually tried to learn something about using the HPC before when attempting to join a research group. I did not learn for very long, I did not practice what I was learning, and forgot shortly after.   
+In the past I harbored a great love for biology, but these days math has more of my attention for better or worse. I am rather picky or better said I take a long time to decide on certain things, and can often use a little bit of a push to move in the right direction.
+

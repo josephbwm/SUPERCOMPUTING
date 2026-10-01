@@ -1,0 +1,6 @@
+name: bbmap-env
+channels:
+  - conda-forge
+dependencies:
+  - bbmap
+prefix: /sciclone/home/jbusbin/.conda/envs/bbmap-env

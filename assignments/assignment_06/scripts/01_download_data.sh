@@ -9,6 +9,14 @@ set -ueo pipefail
 
 wget -P ./data https://zenodo.org/records/15730819/files/SRR33939694.fastq.gz?download=1
 
+#move to data
+cd data
+
+#rename the file so that gunzip can recognize it
+mv SRR33939694.fastq.gz?download=1 SRR33939694.fastq.gz
+
+#unzip the file to a fastq
+gunzip SRR33939694.fastq.gz
+
 #small data set of sequences from Oxford Nanopore
 #Technologies (ONT, AKA: Nanopore) of E. coli phages
-

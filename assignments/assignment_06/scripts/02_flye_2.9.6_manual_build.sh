@@ -17,11 +17,8 @@ cd Flye
 
 make
 
-#availibe as python bin/flye
+#Add to path
+export PATH=$PATH:~/programs/Flye/bin
 
 #test installation was successsful
-python flye/tests/test_toy.py
-
-
-#Add to path 
-export PATH=$PATH:~/programs/Flye/bin
+python3 flye/tests/test_toy.py

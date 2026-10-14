@@ -7,19 +7,19 @@ set -ueo pipefail
 #starts from assignment_06 directory
 
 #call the 01 scripts for data
-bash 01_download_data.sh
+bash ./scripts/01_download_data.sh
 
 #call the 02 scripts for flye (except module)
-bash 02_flye_2.9.6_conda_install.sh
+bash ./scripts/02_flye_2.9.6_conda_install.sh
 
-bash 02_flye_2.9.6_manual_build.sh
+bash ./scripts/02_flye_2.9.6_manual_build.sh
 
 #call the 03 scripts to run in the three ways
-bash 03_run_flye_conda.sh
+bash ./scripts/03_run_flye_conda.sh
 
-bash 03_run_flye_local.sh
+bash ./scripts/03_run_flye_local.sh
 
-bash 03_run_flye_module.sh
+bash ./scripts/03_run_flye_module.sh
 
 #check the tail of each of the files
 

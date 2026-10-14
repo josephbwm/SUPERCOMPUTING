@@ -12,7 +12,7 @@ module load miniforge3
 eval "$(conda shell.bash hook)"
 
 #activate Flye env
-conda activate flye
+conda activate flye-env
 
 #specify inputs and output
 IN="./data/SRR33939694.fastq"
@@ -23,11 +23,11 @@ flye --nano-hq "${IN}" --out-dir "${OUT}" -t 6 --meta --min-overlap 1000
 
 
 #clean up ./assemblies/assembly_conda
-find . -maxdepth 1 -type f ! -name "assembly.fasta" ! -name "flye.log" -delete
+find ./assemblies/assembly_conda/ -mindepth 1 -maxdepth 1 ! -name assembly.fasta ! -name flye.log -exec rm -rf {} +
 
 #rename
-mv assembly.fasta conda_assembly.fasta
-mv flye.log conda_flye.log
+mv ./assemblies/assembly_conda/assembly.fasta ./assemblies/assembly_conda/conda_assembly.fasta
+mv ./assemblies/assembly_conda/flye.log ./assemblies/assembly_conda/conda_flye.log
 
 #deactivate Flye
 conda deactivate

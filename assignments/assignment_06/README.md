@@ -1,7 +1,7 @@
 ##README for assignment_06
 
 ### 1.  Setup assignment_6/ directory
-Cleaning up the directory and making it match took a while. 
+	Cleaning up the directory and making it match took a while. 
 
 ### 2. Download raw ONT data
 	I learned a new flag while writing this script, the "-P" flag on wget 
@@ -9,6 +9,9 @@ Cleaning up the directory and making it match took a while.
 	it afterwards or doing in your current location. 
 	Other than that, I added a .gitignore for data to make life better.
 	I had to go back to unpack the file.
+	Coming back to this on testing, the nodes don't have wget, they do 
+	have curl. Find that out the hard way changed how I wrote the download 
+	script.
 
 ### 3. Get Flye v2.9.6 (local build)
 	I tried the local build with using git clone to place the clone into programs 
@@ -77,6 +80,11 @@ Cleaning up the directory and making it match took a while.
 	In trying to test my scripts I keep getting kicked off the login in node,
 	so I will have to build a batch script to get it to work for any of them.
 	
+	I learned an important lesson about file paths, when I deleted a lot of
+	my work all at once when trying to clean up. A reminder to be aware of 
+	your current working directory.
+	The good news that the scripts are running quite well otherwise.
+	
 ### 7. Compare the results in the log files
 	The code I used was simple it just looked like:
 	"tail -n 10 "./assemblies/assembly_<conda, module, or local>/*.log" " 
@@ -105,6 +113,9 @@ Cleaning up the directory and making it match took a while.
 	The biggest challege for me was not having the scripts and programs 
 	run properly because I got kicked from the login node. That ended up 
 	confusing me a number of times. 
+	As an addendum, I have tested the job on the HPC nodes rather than
+	the login and there were many particularies that were not displayed
+	in the examples I did before. A lot of bug stomping.
 	I learned, and delighted in doing so, that taking multiple approaches
 	to constructing the same functionality while have advantages and 
 	disadvantages of thier own, can also teach you something deeper 
@@ -121,4 +132,10 @@ Cleaning up the directory and making it match took a while.
 	more confusion about how it works.
 	For next assignment I think I will go for the conda env, just because
 	as I said, I think it has a good balance, and is good to get used to.
+
 	
+	
+
+ 
+
+

@@ -7,7 +7,12 @@ set -ueo pipefail
 
 #script to download data for assignment_06
 
-wget -P ./data https://zenodo.org/records/15730819/files/SRR33939694.fastq.gz?download=1
+#Assign target and data
+URL="https://zenodo.org/records/15730819/files/SRR33939694.fastq.gz?download=1"
+TARGET_DIR="./data"
+
+mkdir -p "${TARGET_DIR}" #make it if we don't have a data
+curl -fsSL -o "${TARGET_DIR}/${URL##*/}" "${URL}" #curl the file into it.
 
 #move to data
 cd data

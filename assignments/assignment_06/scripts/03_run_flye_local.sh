@@ -20,11 +20,11 @@ OUT="./assemblies/assembly_local"
 #run flye with our command
 flye --nano-hq "${IN}" --out-dir "${OUT}" -t 6 --meta --min-overlap 1000
 
-#clean up ./assemblies/assembly_conda
-find . -maxdepth 1 -type f ! -name "assembly.fasta" ! -name "flye.log" -delete
+#clean up ./assemblies/assembly_local
+find ./assemblies/assembly_local/ -mindepth 1 -maxdepth 1 ! -name assembly.fasta ! -name flye.log -exec rm -rf {} +
 
 #rename
-mv assembly.fasta local_assembly.fasta
-mv flye.log local_flye.log
+mv ./assemblies/assembly_local/assembly.fasta ./assemblies/assembly_local/local_assembly.fasta
+mv ./assemblies/assembly_local/flye.log ./assemblies/assembly_local/local_flye.log
 
 #nothing to deactivate

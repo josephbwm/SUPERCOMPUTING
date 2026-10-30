@@ -4,9 +4,16 @@
 
 set -euo pipefail
 
+#activate conda env
+module load miniforge3
+
+eval "$(conda shell.bash hook)"
+
+conda activate assignment_07_env
+
 #set variable names
 CSV_FILE="${1:-./data/SraRunTable.csv}"
-OUT_DIR="${2:-./data/raw/sra_fastq}"
+OUT_DIR="${2:-./data/raw}"
 
 #check to see if the file exists
 if [[ ! -f "${CSV_FILE}" ]]; then

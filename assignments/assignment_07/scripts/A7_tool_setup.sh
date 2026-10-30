@@ -9,7 +9,7 @@ set -ueo pipefail
 #Load python and conda
 module load miniforge3
 
-eval "$(conda shell.bash hook)""
+eval "$(conda shell.bash hook)"
 
 #tool list: datasets, sra-toolkit, bbmap, samtools, fasterq-dump is in sra-toolkit, and fastp
 

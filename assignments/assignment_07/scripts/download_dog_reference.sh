@@ -6,6 +6,10 @@
 set -euo pipefail
 
 #activate conda env
+module load miniforge3
+
+eval "$(conda shell.bash hook)"
+
 conda activate assignment_07_env
 
 OUTPUT_ZIP="canis_familiaris_reference_genome.zip"

@@ -69,7 +69,8 @@
         https://www.ncbi.nlm.nih.gov/bioproject/PRJNA728207
         https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=SRR14470682&display=metadata
 
-   
+   For the downloading of the data I broke the problem up into two subscripts to download the sra and reference separatly; both are the simply called in the A7_01_download_data.sh. The download_sra.sh loops through the csv of the sra metadata and prefetches then download each file using fasterq-dump. Note that this script optionally takes command line arguments. The download_dog_reference.sh just uses datasets to download the reference. 
+
 
     
 

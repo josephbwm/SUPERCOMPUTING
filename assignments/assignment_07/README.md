@@ -71,6 +71,15 @@
 
    For the downloading of the data I broke the problem up into two subscripts to download the sra and reference separatly; both are the simply called in the A7_01_download_data.sh. The download_sra.sh loops through the csv of the sra metadata and prefetches then download each file using fasterq-dump. Note that this script optionally takes command line arguments. The download_dog_reference.sh just uses datasets to download the reference. 
 
+### 3. Clean up data
+    I took the baseline of fastp trimming with variable subsitution from assignement_05, then modified by putting it in a while loop that looks for all files containing "R1" in them, and preforms the name subsitutions desired. This may have to be changed on testing if the data files are especially unconventionally named.
+    For the fastp flags, because my SRA data is coming from a wide varitey of sources, I deemed a more generic apporach is probably the safest bet. 
+    --average_qual 20 : NCBI standard
+    --n_base_limit 0 : Deal with uncertain bases would be non-optimal, NCBI standard is 5
+    --trim_front1 20 --trim_front2 20 --trim_tail1 20 --trim_tail2 20 : trim all of the lower quality ends off, NCBI standard.
+    --length_required 100 : anything below this is too short to be a reasonble match, double NCBI standard.
+
+### 4. Map clean reads to dog genome
 
     
 

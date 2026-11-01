@@ -91,6 +91,21 @@
     #seeing as we have a number of large genomes, and a pretty big reference, we will request a lot of time from the server fro the job, my guess is about 4 hours at the number of threads, so to be safe, 6 hours should do (other parts may add to this consideration). 
     #better more than less, for the SLURM header: 26-28 GB of RAM to accommodate the 24 GB Java heap plus OS and thread overhead, and requests  16 CPUs
 
+### 5. Extract reads that matched dog genome
+    The use and flag is simple here. We call samtools to view which is filtering in this case in a standard while loop.
+    -b \ -> expect .bam files
+    -F 4 \ -> to onily include reads that matched to the genome
+
+### 6. Submit your job to SLURM
+    Before I got here I included a testing script to have the tiny files actually run through and have the enviroment set up etc. To use it you run "bash scripts/A7_testing_script.sh" from the assignment_07 directory. I submitted the pipeline without the downloading data step to SLURM for the test. 
+    On my first try I realized I failed to modify my scripts to be executable. So I changed that with "$chmod 700 *.sh"
+    
+
+### 7. 
+
+### 8. 
+
+
 
 
     

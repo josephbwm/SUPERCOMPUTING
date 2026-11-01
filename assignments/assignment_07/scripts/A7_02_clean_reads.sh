@@ -32,18 +32,19 @@ find ./data/raw -type f -name "*_R1*.fastq.gz" -print0 | while IFS= read -r -d '
 
     #Call fastp
     #flags are explained in README.md for assignment_07
+    #changed trims and lenght requirement for testing
     fastp --in1 "${FWD_IN}" \
           --in2 "${REV_IN}" \
           --out1 "${FWD_OUT}" \
           --out2 "${REV_OUT}" \
           --json /dev/null \
           --html /dev/null \
-          --trim_front1 20 \
-          --trim_front2 20 \
-          --trim_tail1 20 \
-          --trim_tail2 20 \
+          --trim_front1 1 \
+          --trim_front2 1 \
+          --trim_tail1 1 \
+          --trim_tail2 1 \
           --n_base_limit 0 \
-          --length_required 100 \
+          --length_required 1 \
           --average_qual 20
 
 done

@@ -1,0 +1,55 @@
+#!/bin/bash
+set -ueo pipefail
+
+#To run use "bash scripts/A7_testing_script.sh" from the assignment_07 directory
+
+echo "Current working directory is: $(pwd)"
+echo "1. Creating directories..."
+mkdir -p ./data/raw ./data/clean ./output
+
+echo "2. Generating Tiny Reference Genome..."
+cat << 'EOF' > ./data/dog_reference.fasta
+>chr1_dummy_dog
+GATCACAGGTCTATCACCCTATTAACCACTCACGGGAGCTCTCCATGCATTTGGTATTTTCGTCTGGGGGGTATGCACGCGATAGCATTGCGAGACGCTG
+GAGCCGGAGCACCCTATGTCGCAGTATCTGTCTTTGATTCCTGCCTCATCCTATTATTTATCGCACCTACGTTCAATATTACAGGCGAACATACTTACTA
+EOF
+
+echo "3. Generating Raw R1..."
+cat << 'EOF' > ./data/raw/sample1_R1.fastq
+@read1_perfect_match
+GATCACAGGTCTATCACCCTATTAACCACTCACGGGAGCTCTCCATGCAT
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+@read2_low_quality_ends
+GAGCCGGAGCACCCTATGTCGCAGTATCTGTCTTTGATTCCTGCCTCATC
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII!!!!!!!!!!
+@read3_unmapped_junk
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+EOF
+
+echo "4. Generating Raw R2..."
+cat << 'EOF' > ./data/raw/sample1_R2.fastq
+@read1_perfect_match
+ATGCATGGAGAGCTCCCGTGAGTGGTTAATAGGGTGATAGACCTGTGATC
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+@read2_low_quality_ends
+GATGAGGCAGGAATCAAAGACAGATACTGCGACATAGGGTGCTCCGGCTC
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII!!!!!!!!!!
+@read3_unmapped_junk
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+EOF
+
+echo "5. Compressing files..."
+gzip -f ./data/raw/sample1_R1.fastq
+gzip -f ./data/raw/sample1_R2.fastq
+
+echo "SUCCESS! Files generated."
+ls -lh ./data/raw/
+ls -lh ./data/dog_reference.fasta

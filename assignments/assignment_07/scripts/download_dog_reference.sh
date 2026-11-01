@@ -13,7 +13,7 @@ eval "$(conda shell.bash hook)"
 conda activate assignment_07_env
 
 OUTPUT_ZIP="canis_familiaris_reference_genome.zip"
-OUTPUT_DIR="./data/dog_reference"
+OUTPUT_DIR="./data/dog_reference.fasta"
 
 echo "Downloading Canis familiaris reference genome..." 
 datasets download genome taxon "Canis familiaris" \

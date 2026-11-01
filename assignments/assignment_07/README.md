@@ -81,7 +81,17 @@
 
 ### 4. Map clean reads to dog genome
 
-    
+    Flags for bbmap:
+    - path="${INDEX_DIR}" tells bbmap that we already have refernce index we are using, and it's already made, hopefully this speeds things up.
+    - ambiguous=best \ # if multiple matches, pick best one (based on alignment score)
+    - minid=0.95 specifics that we want at least 95% identity required to match as desired for the assignment.
+    - threads=16 \ # Use a good number of threads
+    -The amount of RAM is based off of the reference genome, at an estimate of about 6 bytes per base and a reference size of approximatly 2.5 Gb, that makes for 18g, so for cusion I will use use 24g.
+
+    #seeing as we have a number of large genomes, and a pretty big reference, we will request a lot of time from the server fro the job, my guess is about 4 hours at the number of threads, so to be safe, 6 hours should do (other parts may add to this consideration). 
+    #better more than less, for the SLURM header: 26-28 GB of RAM to accommodate the 24 GB Java heap plus OS and thread overhead, and requests  16 CPUs
+
+
 
     
 

@@ -12,7 +12,7 @@ conda activate assignment_07_env
 mkdir -p ./output
 
 # Define vars
-REF_GENOME="./data/dog_reference.fasta"
+REF_GENOME="./data/dog_reference/canis_familiaris_reference_genome.fasta"
 INDEX_DIR="./output/bbmap_index"
 
 #Make the index once for the reference with explicit memory limits

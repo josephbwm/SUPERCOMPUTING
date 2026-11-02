@@ -71,6 +71,13 @@
 
    For the downloading of the data I broke the problem up into two subscripts to download the sra and reference separatly; both are the simply called in the A7_01_download_data.sh. The download_sra.sh loops through the csv of the sra metadata and prefetches then download each file using fasterq-dump. Note that this script optionally takes command line arguments. The download_dog_reference.sh just uses datasets to download the reference. 
 
+   For the fasterq-dump flags:
+    I learned that I do have a temp directory, and that using it to throttle data IO is important.
+    --temp "${TMPDIR:-/sciclone/scr10/${USER}}" \ 
+    --threads "${SLURM_CPUS_PER_TASK:-4}" : to limit the number of threads used
+    --progress : to show progress
+    --threads "${SLURM_CPUS_PER_TASK:-4}" : a saftly measure to llimit fasterq-dump, it can't use so many anyways.
+
 ### 3. Clean up data
     I took the baseline of fastp trimming with variable subsitution from assignement_05, then modified by putting it in a while loop that looks for all files containing "R1" in them, and preforms the name subsitutions desired. This may have to be changed on testing if the data files are especially unconventionally named.
     For the fastp flags, because my SRA data is coming from a wide varitey of sources, I deemed a more generic apporach is probably the safest bet. 
@@ -99,6 +106,8 @@
 ### 6. Submit your job to SLURM
     Before I got here I included a testing script to have the tiny files actually run through and have the enviroment set up etc. To use it you run "bash scripts/A7_testing_script.sh" from the assignment_07 directory. I submitted the pipeline without the downloading data step to SLURM for the test. 
     On my first try I realized I failed to modify my scripts to be executable. So I changed that with "$chmod 700 *.sh"
+    On the second try I redirected the logs to the right location.
+    Before running the whole job, I took another look to check compatability back to my download scripts and fix multiple bugs there.
     
 
 ### 7. 

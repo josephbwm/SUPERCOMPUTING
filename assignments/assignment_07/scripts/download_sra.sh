@@ -4,46 +4,57 @@
 
 set -euo pipefail
 
-#activate conda env
+# Activate conda env
 module load miniforge3
-
 eval "$(conda shell.bash hook)"
-
 conda activate assignment_07_env
 
-#set variable names
+# Set variable names
 CSV_FILE="${1:-./data/SraRunTable.csv}"
 OUT_DIR="${2:-./data/raw}"
 
-#check to see if the file exists
+# Check to see if the file exists
 if [[ ! -f "${CSV_FILE}" ]]; then
     echo "Error: File '${CSV_FILE}' does not exist." >&2
     exit 1
 fi
 
-#make the data/raw directory if it does not already exist
-mkdir -p "./data/raw"
+# Create the correct target directory
+mkdir -p "${OUT_DIR}"
+#mkdir -p "/sciclone/scr10/${USER}" #change cluster name to make a scratch directory if you don't have one for unpacking the data.
 
-# Read the first column:
-# - tail -n +2 skips the header line (omit if your CSV lacks a header)
-# - cut -d',' -f1 selects the first column
-# - tr -d '"\r ' removes quotation marks, carriage returns, and whitespace
+# Read the first column, skipping the header
 tail -n +2 "${CSV_FILE}" | cut -d',' -f1 | tr -d '"\r ' | while IFS= read -r acc; do
     [[ -z "${acc}" ]] && continue
 
-    #We prefetch the data first for better downloads and diskspace
-    echo "==> [1/2] Prefetching: $acc"
+    echo "==> [1/3] Prefetching: ${acc}"
     prefetch "${acc}" -O "${OUT_DIR}"
 
-    echo "==> [2/2] Extracting FASTQ: $acc"
+    echo "==> [2/3] Extracting FASTQ: ${acc}"
+    # Target local node scratch for temp files, and restrict threads to SLURM allocation
+    #flags explain in assignment_07 README.md
     fasterq-dump "${OUT_DIR}/${acc}" \
         --outdir "${OUT_DIR}" \
         --split-files \
+        --temp "${TMPDIR:-/sciclone/scr10/${USER}}" \
+        --threads "${SLURM_CPUS_PER_TASK:-4}" \
         --progress
+
+    echo "==> [3/3] Compressing and renaming: ${acc}"
+    # SRA outputs _1 and _2. We rename to _R1 and _R2 while compressing to save I/O time.
+    # We check if the files exist first (some SRA entries are single-end and won't have a _2).
+    if [[ -f "${OUT_DIR}/${acc}_1.fastq" ]]; then
+        gzip -c "${OUT_DIR}/${acc}_1.fastq" > "${OUT_DIR}/${acc}_R1.fastq.gz"
+        rm "${OUT_DIR}/${acc}_1.fastq"
+    fi
+    
+    if [[ -f "${OUT_DIR}/${acc}_2.fastq" ]]; then
+        gzip -c "${OUT_DIR}/${acc}_2.fastq" > "${OUT_DIR}/${acc}_R2.fastq.gz"
+        rm "${OUT_DIR}/${acc}_2.fastq"
+    fi
 
     # Clean up the .sra download folder to reclaim space
     rm -rf "${OUT_DIR:?}/${acc}"
 done
 
-echo "==> SRA download completed. Files saved to: ${OUT_DIR}"
-
+echo "==> SRA download completed. Compressed files saved to: ${OUT_DIR}"

@@ -10,7 +10,7 @@ eval "$(conda shell.bash hook)"
 conda activate assignment_07_env
 
 # Set variable names
-CSV_FILE="${1:-./data/SraRunTable.csv}"
+CSV_FILE="${1:-./SraRunTable.csv}"
 OUT_DIR="${2:-./data/raw}"
 
 # Check to see if the file exists
@@ -23,6 +23,10 @@ fi
 mkdir -p "${OUT_DIR}"
 #mkdir -p "/sciclone/scr10/${USER}" #change cluster name to make a scratch directory if you don't have one for unpacking the data.
 
+# Define scratch directory
+NODE_SCRATCH="${TMPDIR:-/scr10/$USER/sra_temp}"
+mkdir -p "${NODE_SCRATCH}"
+
 # Read the first column, skipping the header
 tail -n +2 "${CSV_FILE}" | cut -d',' -f1 | tr -d '"\r ' | while IFS= read -r acc; do
     [[ -z "${acc}" ]] && continue
@@ -34,23 +38,24 @@ tail -n +2 "${CSV_FILE}" | cut -d',' -f1 | tr -d '"\r ' | while IFS= read -r acc
     # Target local node scratch for temp files, and restrict threads to SLURM allocation
     #flags explain in assignment_07 README.md
     fasterq-dump "${OUT_DIR}/${acc}" \
-        --outdir "${OUT_DIR}" \
+        --outdir "${NODE_SCRATCH}" \
         --split-files \
-        --temp "${TMPDIR:-/sciclone/scr10/${USER}}" \
+        --temp "${NODE_SCRATCH}" \
         --threads "${SLURM_CPUS_PER_TASK:-4}" \
         --progress
 
     echo "==> [3/3] Compressing and renaming: ${acc}"
     # SRA outputs _1 and _2. We rename to _R1 and _R2 while compressing to save I/O time.
     # We check if the files exist first (some SRA entries are single-end and won't have a _2).
-    if [[ -f "${OUT_DIR}/${acc}_1.fastq" ]]; then
-        gzip -c "${OUT_DIR}/${acc}_1.fastq" > "${OUT_DIR}/${acc}_R1.fastq.gz"
-        rm "${OUT_DIR}/${acc}_1.fastq"
+    # Compress the massive text files located in scratch directly into compressed files in output directory
+    if [[ -f "${NODE_SCRATCH}/${acc}_1.fastq" ]]; then
+        gzip -c "${NODE_SCRATCH}/${acc}_1.fastq" > "${OUT_DIR}/${acc}_R1.fastq.gz"
+        rm "${NODE_SCRATCH}/${acc}_1.fastq"
     fi
     
-    if [[ -f "${OUT_DIR}/${acc}_2.fastq" ]]; then
-        gzip -c "${OUT_DIR}/${acc}_2.fastq" > "${OUT_DIR}/${acc}_R2.fastq.gz"
-        rm "${OUT_DIR}/${acc}_2.fastq"
+    if [[ -f "${NODE_SCRATCH}/${acc}_2.fastq" ]]; then
+        gzip -c "${NODE_SCRATCH}/${acc}_2.fastq" > "${OUT_DIR}/${acc}_R2.fastq.gz"
+        rm "${NODE_SCRATCH}/${acc}_2.fastq"
     fi
 
     # Clean up the .sra download folder to reclaim space

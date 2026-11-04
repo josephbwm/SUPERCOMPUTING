@@ -2,8 +2,9 @@
 #SBATCH --job-name=assignment_07_test
 #SBATCH --nodes=1 # how many physical machines in the cluster 
 #SBATCH --ntasks=1 # how many separate 'tasks' (stick to 1)
-#SBATCH --cpus-per-task=4 # how many cores (bora max is 20) (should be 16 for real run)
-#SBATCH --time=60 # d-hh:mm:ss or just No. of minutes #12 hr for real run.
+#SBATCH --cpus-per-task=16 # how many cores (bora max is 20) (should be 16 for real run)
+#SBATCH --mem=28G #How much we need.
+#SBATCH --time=12:00:00 # d-hh:mm:ss or just No. of minutes #12 hr for real run.
 #SBATCH -o ./output/A7test_%j.out #STDOUT to file (%j is jobID)
 #SBATCH -e ./output/A7test_%j.err #STDERR to file (%j is jobID)
 #SBATCH --mail-type=FAIL,END # when to email you

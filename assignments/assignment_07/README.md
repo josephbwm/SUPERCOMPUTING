@@ -108,6 +108,19 @@
     On my first try I realized I failed to modify my scripts to be executable. So I changed that with "$chmod 700 *.sh"
     On the second try I redirected the logs to the right location.
     Before running the whole job, I took another look to check compatability back to my download scripts and fix multiple bugs there.
+    The first two attempts at running the job failed due to minor file path errors. The third attempt was more intresting and was do to storage limit errors, which was resolved bt changing the output of fasterq-dump for the data downloads. A problem only expected to be run into with large files.
+    On the forth attempt I ran out of storage again, so I instead created a symbolic link from the data folder in that assignment_07 directory to a folder in my scratch directory with:
+
+    mv ./data ~/sciclone/scr10/jbusbin/assignment_07_data
+    ln -s ~/sciclone/scr10/jbusbin/assignment_07_data ./data
+    
+    To break the symbolic link it is as simple as using rm or unlink command. DO NOT use rm -rf or else it will delete files in scratch (the linked directory) rather than removing the folder, so unlink is safer in that way. 
+
+    However since the data is too big it is also likely that other part such as teh output matches will be too large, so we link those as well. 
+    mv ./output /sciclone/scr10/jbusbin/assignment_07_output
+    ln -s /sciclone/scr10/jbusbin/assignment_07_output ./output
+
+    This should cause the scripts to run as desired and not have to worry about storage, but now looking back on it, it may have been easier to specifiy the scratch directory as the place for all the data, and the scripts merely operate from a distance in assingment_07 directory. But modificaiton would be more difficult at this point. 
     
 
 ### 7. 

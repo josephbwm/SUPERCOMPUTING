@@ -6,9 +6,9 @@ set -ueo pipefail
 
 #Get SRA data
 
-bash ./download_sra.sh ./data/SraRunTable.csv ./data/raw
+bash ./scripts/download_sra.sh ./SraRunTable.csv ./data/raw
 
 #Get reference
 
-bash ./download_dog_reference.sh
+bash ./scripts/download_dog_reference.sh
 

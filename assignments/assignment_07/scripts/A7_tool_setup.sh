@@ -20,7 +20,7 @@ eval "$(conda shell.bash hook)"
 #4.Export to YAML
 
 #Use mamba to create the env, all our packages are found in bioconda channel
-mamba create -y -n assignment_07_env -c conda-forge -c bioconda datasets sra-tools bbmap samtools  fastp
+mamba create -y -n assignment_07_env -c conda-forge -c bioconda datasets sra-tools bbmap samtools fastp pigz
 
 #activate and test
 conda activate assignment_07_env

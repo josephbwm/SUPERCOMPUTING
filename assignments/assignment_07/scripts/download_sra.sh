@@ -48,13 +48,14 @@ tail -n +2 "${CSV_FILE}" | cut -d',' -f1 | tr -d '"\r ' | while IFS= read -r acc
     # SRA outputs _1 and _2. We rename to _R1 and _R2 while compressing to save I/O time.
     # We check if the files exist first (some SRA entries are single-end and won't have a _2).
     # Compress the massive text files located in scratch directly into compressed files in output directory
+    # Use pigz (parallel gzip) to compress using all available SLURM cores
     if [[ -f "${NODE_SCRATCH}/${acc}_1.fastq" ]]; then
-        gzip -c "${NODE_SCRATCH}/${acc}_1.fastq" > "${OUT_DIR}/${acc}_R1.fastq.gz"
+        pigz -c -p "${SLURM_CPUS_PER_TASK:-4}" "${NODE_SCRATCH}/${acc}_1.fastq" > "${OUT_DIR}/${acc}_R1.fastq.gz"
         rm "${NODE_SCRATCH}/${acc}_1.fastq"
     fi
     
     if [[ -f "${NODE_SCRATCH}/${acc}_2.fastq" ]]; then
-        gzip -c "${NODE_SCRATCH}/${acc}_2.fastq" > "${OUT_DIR}/${acc}_R2.fastq.gz"
+        pigz -c -p "${SLURM_CPUS_PER_TASK:-4}" "${NODE_SCRATCH}/${acc}_2.fastq" > "${OUT_DIR}/${acc}_R2.fastq.gz"
         rm "${NODE_SCRATCH}/${acc}_2.fastq"
     fi
 

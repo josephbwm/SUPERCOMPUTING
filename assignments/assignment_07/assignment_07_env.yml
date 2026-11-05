@@ -40,7 +40,7 @@ dependencies:
   - datasets=5.1.0
   - dill=0.4.1
   - fastp=1.4.0
-  - filelock=4.2.4
+  - filelock=4.2.8
   - font-ttf-dejavu-sans-mono=2.37
   - font-ttf-inconsolata=3.000
   - font-ttf-source-code-pro=2.038
@@ -68,7 +68,7 @@ dependencies:
   - lcms2=2.20
   - ld_impl_linux-64=2.46.1
   - lerc=4.3.0
-  - libabseil=20260526.0
+  - libabseil=20260817.0
   - libarrow=26.0.0
   - libarrow-acero=26.0.0
   - libarrow-compute=26.0.0
@@ -79,6 +79,7 @@ dependencies:
   - libbrotlicommon=1.2.1
   - libbrotlidec=1.2.1
   - libbrotlienc=1.2.1
+  - libcap=2.78
   - libcblas=3.11.0
   - libcrc32c=1.1.2
   - libcups=2.3.3
@@ -99,7 +100,7 @@ dependencies:
   - libgomp=16.2.0
   - libgoogle-cloud=3.12.0
   - libgoogle-cloud-storage=3.12.0
-  - libgrpc=1.82.2
+  - libgrpc=1.85.1
   - libharfbuzz=15.0.0
   - libhwy=1.3.0
   - libiconv=1.18
@@ -121,6 +122,8 @@ dependencies:
   - libssh2=1.11.1
   - libstdcxx=16.2.0
   - libstdcxx-ng=16.2.0
+  - libsystemd=262.1
+  - libsystemd0=262.1
   - libthrift=0.25.0
   - libtiff=4.7.2
   - libutf8proc=2.11.3
@@ -142,7 +145,7 @@ dependencies:
   - orc=2.3.1
   - ossuuid=1.6.2
   - packaging=26.3
-  - pandas=3.1.0
+  - pandas=3.1.1
   - pcre2=10.47
   - perl=5.32.1
   - perl-alien-build=2.88

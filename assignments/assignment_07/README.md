@@ -2,29 +2,37 @@
 
 ### 1. Directory stucture:
 A7_assignment_07_pipeline.slurm
+
 data
-    -clean
-    -dog
-    -raw
+-clean
+-dog
+-raw
+
 output
-    -SRR#_dog_matches.bam
-    -SRR#.mapping.bam
+-SRR#_dog_matches.bam
+-SRR#.mapping.bam
+
 scripts
-    - A7_tool_setup.sh
-    - A7_01_download_data.sh
-    - download_sra.sh
-    - download_dog_reference.sh
-    - A7_02_clean_reads.sh
-    - A7_03_map_reads.sh
-    - A7_04_mapping_stats.sh
-    - A7_testing_script.sh
+- A7_tool_setup.sh
+- A7_01_download_data.sh
+- download_sra.sh
+- download_dog_reference.sh
+- A7_02_clean_reads.sh
+- A7_03_map_reads.sh
+- A7_04_mapping_stats.sh
+- A7_testing_script.sh
+
 SraRunTable.csv
+
 README.md
+
 assignemnt_07_env.yml
+
 mapping_summary.csv
+
 logs
-    - assignment_07.err
-    - assignment_07.out
+- assignment_07.err
+- assignment_07.out
 		
 ### Tool setup:
 For this assignment I am choosing to use conda enviroments.
@@ -104,7 +112,8 @@ Flags for bbmap:
 - The amount of RAM is based off of the reference genome, at an estimate of about 6 bytes per base and a reference size of approximatly 2.5 Gb, that makes for 18g, so for cusion I will use use 24g.
 
 Before testing I wrote:
->Seeing as we have a number of large genomes, and a pretty big reference, we will request a lot of time from the server fro the job, my guess is about 4 hours at the number of threads, so to be safe, 6 hours should do (other parts may add to this consideration). 
+> Seeing as we have a number of large genomes, and a pretty big reference, we will request a lot of time from the server fro the job, my guess is about 4 hours at the number of threads, so to be safe, 6 hours should do (other parts may add to this consideration). <
+
 After testing you can see that this prediction becomes naive. 
 For memory and compute more is better than less is the concpet that informs the SLURM header: 26-28 GB of RAM to accommodate the 24 GB Java heap plus OS and thread overhead, and it requests 16 CPUs.
 

@@ -4,13 +4,13 @@
 A7_assignment_07_pipeline.slurm
 
 data
--clean
--dog
--raw
+- clean
+- dog
+- raw
 
 output
--SRR#_dog_matches.bam
--SRR#.mapping.bam
+- SRR#_dog_matches.bam
+- SRR#.mapping.bam
 
 scripts
 - A7_tool_setup.sh
@@ -112,7 +112,7 @@ Flags for bbmap:
 - The amount of RAM is based off of the reference genome, at an estimate of about 6 bytes per base and a reference size of approximatly 2.5 Gb, that makes for 18g, so for cusion I will use use 24g.
 
 Before testing I wrote:
-> Seeing as we have a number of large genomes, and a pretty big reference, we will request a lot of time from the server fro the job, my guess is about 4 hours at the number of threads, so to be safe, 6 hours should do (other parts may add to this consideration). <
+> Seeing as we have a number of large genomes, and a pretty big reference, we will request a lot of time from the server fro the job, my guess is about 4 hours at the number of threads, so to be safe, 6 hours should do (other parts may add to this consideration).
 
 After testing you can see that this prediction becomes naive. 
 For memory and compute more is better than less is the concpet that informs the SLURM header: 26-28 GB of RAM to accommodate the 24 GB Java heap plus OS and thread overhead, and it requests 16 CPUs.
@@ -153,21 +153,21 @@ And I add the held out SRA numbers back into the RunTable.
 ### 8. Inspect your results
 
 With a quick script to loop through the results we have:
-Sample,Total_Reads,Mapped_Reads,Percent_Mapped
-ERR13865292,9194530,3236,3236,0.04,0.04%
-ERR13865299,8592696,3828,3828,0.04,0.04%
-ERR13865300,1167134,5541,5541,0.47,0.47%
-ERR16891046,75106492,8728,8728,0.01,0.01%
-ERR16891055,90664902,44817,44817,0.05,0.05%
-ERR16898309,61519616,506,506,0.00,0.00%
-ERR16898311,59113404,1812,1812,0.00,0.00%
-SRR14470682,32579906,1280,1280,0.00,0.00%
-SRR17622020,41380540,7744,7744,0.02,0.02%
-SRR17622021,39336620,2260,2260,0.01,0.01%
-SRR17622022,39738584,3962,3962,0.01,0.01%
-SRR28211885,144685924,2627,2627,0.00,0.00%
-SRR29324611,81030376,2195,2195,0.00,0.00%
-SRR33545155,50274310,11413,11413,0.02,0.02%
+Sample,Total_Reads,Mapped_Reads,Percent_Mapped\
+ERR13865292,9194530,3236,3236,0.04,0.04%\
+ERR13865299,8592696,3828,3828,0.04,0.04%\
+ERR13865300,1167134,5541,5541,0.47,0.47%\
+ERR16891046,75106492,8728,8728,0.01,0.01%\
+ERR16891055,90664902,44817,44817,0.05,0.05%\
+ERR16898309,61519616,506,506,0.00,0.00%\
+ERR16898311,59113404,1812,1812,0.00,0.00%\
+SRR14470682,32579906,1280,1280,0.00,0.00%\
+SRR17622020,41380540,7744,7744,0.02,0.02%\
+SRR17622021,39336620,2260,2260,0.01,0.01%\
+SRR17622022,39738584,3962,3962,0.01,0.01%\
+SRR28211885,144685924,2627,2627,0.00,0.00%\
+SRR29324611,81030376,2195,2195,0.00,0.00%\
+SRR33545155,50274310,11413,11413,0.02,0.02%\
 
 And we see that thousands or even tens of thousands of mapped reads corresponding to matches with the dog reference. Overall a small percent (execpt in ERR13865300, that is crazy) but, by all means every run apears containinated!
 
@@ -199,7 +199,7 @@ A7_02_clean_reads.sh is found in scripts, it uses fastp to clean the reads, the 
 See **3** in README.md.
 
 A7_03_map_reads.sh is found in scripts, it expects the data to be found in `./data/clean` and expects the reference to be found in `./data/dog_reference/` as fastq.gz and fasta files respectivly. It uses bbmap to map the clean samples to the refernece, and then calls samtools to keep the matched dogfilters createing a new set of files from the `.mapped.bam` files or `_dog_matches.bam`.  
-See **4 adn 5** in README.md.
+See **4 and 5** in README.md.
 
 A7_04_clean_reads.sh is found in scripts, It runs samtools flagstats to compare the number of total read to the number of mapped reads. It operates on the `.mapping.bam` files to give a comparison to the total of the number of strands that matches the dog reference.
 It is intented to be run as a stand alone from the assignement_06 directory post pipeline script for optional analysis. It takes no arguments, and expects that `.mapping.bam` files to be in `./output`.
@@ -210,6 +210,7 @@ A7_testing_script.sh is foudn in scripts. It is used to generate a simple set of
 **Challenges:**
 I found three major challenges to my conventional understandings.
 The first is that while understanding how one tool works is crictial, understanding a pipeline chain of tools is more difficult. The tools must connect and sync to one another. The managing and typing of the files is difficult to keep track of. The tools do so much the can end up hiding or abstracting how much work they do.
+
 The second is just how large data can be. Previously we said large numbers, but it is not until hitting the wall time that you realize how large the data is. It gives a new meaning to the steps of building an efficient pipeline because at this scale computational power can no longer trivialize the inoptimalities in the code you write.
 The third is that with the increase in data, not only is computation speed bottle necked, but storage as well. I ran into storage issues multiple times as the files were too large to be premitted outside of the scratch and data directories. 
 

@@ -14,6 +14,7 @@ mkdir -p ./data/clean
 
 #Use 'find' to search for files by name. 
 #-print0 outputs a null byte after each filename (handles spaces safely, matching read -d '')
+#expects data to be found in data/raw.
 find ./data/raw -type f -name "*_R1*.fastq.gz" -print0 | while IFS= read -r -d '' file; do
     
     echo "Processing file: ${file}"

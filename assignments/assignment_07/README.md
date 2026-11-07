@@ -1,6 +1,6 @@
 ##assignment_07 README.md
 
-###1. Directory stucture:
+### 1. Directory stucture:
 	assignment_07_pipeline.slurm
 	data
 		-clean
@@ -99,7 +99,8 @@
     #better more than less, for the SLURM header: 26-28 GB of RAM to accommodate the 24 GB Java heap plus OS and thread overhead, and requests  16 CPUs
 
 ### 5. Extract reads that matched dog genome
-    The use and flag is simple here. We call samtools to view which is filtering in this case in a standard while loop.
+    for the find command, -L tells samtools to look in the symulinked output directory. 
+    The use and flags for samtools is simple here. We call samtools to view which is filtering in this case in a standard while loop.
     -b \ -> expect .bam files
     -F 4 \ -> to onily include reads that matched to the genome
 
@@ -118,7 +119,7 @@
     
     To break the symbolic link it is as simple as using rm or unlink command. DO NOT use rm -rf or else it will delete files in scratch (the linked directory) rather than removing the folder, so unlink is safer in that way. 
 
-    However since the data is too big it is also likely that other part such as teh output matches will be too large, so we link those as well. 
+    However since the data is too big it is also likely that other part such as the output matches will be too large, so we link those as well. 
     mv ./output /sciclone/scr10/jbusbin/assignment_07_output
     ln -s /sciclone/scr10/jbusbin/assignment_07_output ./output
 
@@ -128,7 +129,77 @@
     And I add the held out SRA numbers back into the RunTable.
 
 ### 8. Inspect your results
+
+    With a quick script to loop through the results we have:
+    Sample,Total_Reads,Mapped_Reads,Percent_Mapped
+    ERR13865292,9194530,3236,3236,0.04,0.04%
+    ERR13865299,8592696,3828,3828,0.04,0.04%
+    ERR13865300,1167134,5541,5541,0.47,0.47%
+    ERR16891046,75106492,8728,8728,0.01,0.01%
+    ERR16891055,90664902,44817,44817,0.05,0.05%
+    ERR16898309,61519616,506,506,0.00,0.00%
+    ERR16898311,59113404,1812,1812,0.00,0.00%
+    SRR14470682,32579906,1280,1280,0.00,0.00%
+    SRR17622020,41380540,7744,7744,0.02,0.02%
+    SRR17622021,39336620,2260,2260,0.01,0.01%
+    SRR17622022,39738584,3962,3962,0.01,0.01%
+    SRR28211885,144685924,2627,2627,0.00,0.00%
+    SRR29324611,81030376,2195,2195,0.00,0.00%
+    SRR33545155,50274310,11413,11413,0.02,0.02%
+
+    And we see that thousands or even tens of thousands of mapped reads corresponding to matches with the dog reference. Overall a small percent (execpt in ERR13865300, that is crazy) but, by all means every run apears containinated!
+
+### 9. Document Everything
+
+    Metadata:
+    SraRunTable.cvs is a data table containing the meta data for each genome to download, all ther paired, and thier sources and selection are detailed in **2**. 
+    Bewarned that the lables at the top may not match all columns of the metadata, on the accension number (the first column) was used. 
+
+    Scripts: 
+
+    All scripts are expected to be called from the assignment_07 directory.
+     
+    A7_tool_setup.sh is found in scripts and used to create the conda enviroment used to run the tools used in all scripts. It takes no arguments and produces a YAML file. Tool list: datasets, sra-toolkit, bbmap, samtools, fasterq-dump is in sra-toolkit, fastp, and pigz.
+    See **1** in README.md.
+
+    A7_01_download_data.sh is found in scripts, it calls two subscripts download_sra.sh and download_dog_refernce.sh which are also in scripts.
+    See **2** in README.md.
+
+    download_sra.sh is found in scripts, it  is used to prefetch, download, and compress each set of genomic data with faterq--dump and pigz. It takes two optional arguments. The first argument corresponed the table of data from NCBI run selector and expects the first column to be SRA  ascention numbers, and does not use the rest, so any CSV of ascention number will do. The second argument is the output directory.  
+    Called by A7_01_download_data.sh.
+    See **2** in README.md.
+
+    download_dog_reference.sh is found in scripts, it is used to get the reference dog genome for Canis familiaris using NCBI datasets CLI.
+    Called by A7_01_download_data.sh.
+    See **2** in README.md.
+
+    A7_02_clean_reads.sh is found in scripts, it uses fastp to clean the reads, the choices for which are explain in the read me. It expects data to be found in data/raw.
+    See **3** in README.md.
+
+    A7_03_map_reads.sh is found in scripts, it expects the data to be found in ./data/clean and expects the reference to be found in ./data/dog_reference/ as fastq.gz and fasta files respectivly. It uses bbmap to map the clean samples to the refernece, and then calls samtools to keep the matched dogfilters createing a new set of files from the .mapped.bam files or _dog_matches.bam.  
+    See **4 adn 5** in README.md.
+
+    A7_04_clean_reads.sh is found in scripts, It runs samtools flagstats to compare the number of total read to the number of mapped reads. It operates on the .mapping.bam files to give a comparison to the total of the number of strands that matches the dog reference.
+    It is intented to be run as a stand alone from the assignement_06 directory post pipeline script for optional analysis. It takes no arguments, and expects that .mapping.bam files to be in ./output.
+
+    A7_testing_script.sh is foudn in scripts. It is used to generate a simple set of toy data to 
+
+### reflection:
+    Challenges:
+    I found three major challenges to my conventional understandings.
+    The first is that while understanding how one tool works is crictial, understanding a pipeline chain of tools is more difficult. The tools must connect and sync to one another. The managing and typing of the files is difficult to keep track of. The tools do so much the can end up hiding or abstracting how much work they do.
+    The second is just how large data can be. Previously we said large numbers, but it is not until hitting the wall time that you realize how large the data is. It gives a new meaning to the steps of building an efficient pipeline because at this scale computational power can no longer trivialize the inoptimalities in the code you write.
+    The third is that with the increase in data, not only is computation speed bottle necked, but storage as well. I ran into storage issues multiple times as the files were too large to be premitted outside of the scratch and data directories. 
+
+    New things I learned: (In bullet point fasion)
+    Not all tools are automatically setup to use all the threads that you can give them. The example here is pigz vs gz. The first can take advantage of all the cores you give it, the second is designed to only use one.
+    Testing is very useful, but has difficulties representing issues the arise with scale. Tests are by nature small and fast to find issues quickly, but novel issues can arise at scale that would not appear when running smaller tests.
+    The setup of the tools was suprizingly easy.
+    The debugging was expectedly hard. 
+    Modularization is moderatly difficult, and being able to have a script adapt to any HPC via bash variables is useful, but you have to be intentional about it.
     
+
+
 
 
 

@@ -21,10 +21,9 @@ fi
 
 # Create the correct target directory
 mkdir -p "${OUT_DIR}"
-#mkdir -p "/sciclone/scr10/${USER}" #change cluster name to make a scratch directory if you don't have one for unpacking the data.
 
 # Define scratch directory
-NODE_SCRATCH="${TMPDIR:-/scr10/$USER/sra_temp}"
+NODE_SCRATCH="${TMPDIR:-/scr10/${USER}/sra_temp}"
 mkdir -p "${NODE_SCRATCH}"
 
 # Read the first column, skipping the header

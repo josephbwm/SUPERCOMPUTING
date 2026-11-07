@@ -8,7 +8,7 @@ module load miniforge3
 eval "$(conda shell.bash hook)"
 conda activate assignment_07_env
 
-# Create the output directory if it doesn't exist
+# Create the output directory if it doesn't exist (it should have been created in 01_download_data.sh).
 mkdir -p ./output
 
 # Define vars
@@ -55,17 +55,19 @@ find ./data/clean -type f -name "*_R1.trimmed.fastq.gz" -print0 | while IFS= rea
 done
 
 # Optional: Clean up the index directory when all samples finish
-# rm -rf "${INDEX_DIR}"
+rm -rf "${INDEX_DIR}"
 
 #Call samtools on the sam files to keep only mapped results 
 #flags are explained in assignment_07 README.md
-find ./output -type f -name "*.mapping.bam" -print0 | while IFS= read -r -d '' file_bam; do
+find -L ./output -type f -name "*.mapping.bam" -print0 | while IFS= read -r -d '' file_bam; do
 
-    out_bam="${file_bam/.mapping.bam/_dog_matches.bam}"
+    OUT_BAM="${file_bam/.mapping.bam/_dog_matches.bam}"
+
+    echo "filtering sample: ${OUT_BAM} for dog matches"
 
     samtools view \
     -b \
     -F 4 \
-    "${file_bam}" > "${out_bam}"
+    "${file_bam}" > "${OUT_BAM}"
 
 done

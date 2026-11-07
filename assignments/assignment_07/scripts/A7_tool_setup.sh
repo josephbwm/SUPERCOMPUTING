@@ -11,7 +11,7 @@ module load miniforge3
 
 eval "$(conda shell.bash hook)"
 
-#tool list: datasets, sra-toolkit, bbmap, samtools, fasterq-dump is in sra-toolkit, and fastp
+#tool list: datasets, sra-toolkit, bbmap, samtools, fasterq-dump is in sra-toolkit, fastp, and pigz
 
 #General Process:	
 #1.Download datasets with mamba
@@ -24,8 +24,8 @@ mamba create -y -n assignment_07_env -c conda-forge -c bioconda datasets sra-too
 
 #activate and test
 conda activate assignment_07_env
-datasets --version && srapath --version && bbversion.sh && samtools --version && fastp --version
+datasets --version && srapath --version && bbversion.sh && samtools --version && fastp --version && pigz --version
 
-#export
+#export to YAML
 conda env export --no-builds > assignment_07_env.yml
 

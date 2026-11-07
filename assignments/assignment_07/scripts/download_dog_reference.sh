@@ -6,7 +6,7 @@
 #!/usr/bin/env bash
 # Description: Download the reference genome sequence for Canis familiaris using NCBI datasets CLI.
 # Usage: ./download_dog_reference.sh
-# Run from assignment_07 directory 
+# Run from assignment_07 directory, is called in A7_01_download_data.sh
 
 set -euo pipefail
 
@@ -43,6 +43,5 @@ echo "Cleaning up temp files..."
 # 5. Remove the ZIP file and the extracted NCBI folder structure
 rm "${OUTPUT_ZIP}"
 rm -rf "${DATA_DIR}/ncbi_dataset"
-rm -f README.md md5sum.txt # Remove standard NCBI package text files
 
 echo "Completed! Reference FASTA file is located at: ${FINAL_FASTA}"

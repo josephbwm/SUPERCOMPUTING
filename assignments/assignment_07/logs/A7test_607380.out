@@ -1,0 +1,579 @@
+conda-forge/linux-64                                        Using cache
+conda-forge/noarch                                          Using cache
+bioconda/linux-64                                           Using cache
+bioconda/noarch                                             Using cache
+Transaction
+
+  Prefix: /sciclone/home/jbusbin/.conda/envs/assignment_07_env
+
+  Updating specs:
+
+   - datasets
+   - sra-tools
+   - bbmap
+   - samtools
+   - fastp
+   - pigz
+
+
+  Package                                         Version  Build                 Channel           Size
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Install:
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  + ca-certificates                            2026.10.23  hbd8a1cb_0            conda-forge     Cached
+  + python_abi                                       3.14  9_cp314               conda-forge     Cached
+  + font-ttf-dejavu-sans-mono                        2.37  hab24e00_0            conda-forge     Cached
+  + tzdata                                          2026e  h5d301ff_0            conda-forge     Cached
+  + font-ttf-inconsolata                            3.000  h77eed37_0            conda-forge     Cached
+  + font-ttf-source-code-pro                        2.038  h77eed37_0            conda-forge     Cached
+  + font-ttf-ubuntu                                  0.83  h77eed37_3            conda-forge     Cached
+  + fonts-conda-forge                                   1  hc364b38_1            conda-forge     Cached
+  + fonts-conda-ecosystem                               1  0                     conda-forge     Cached
+  + libzlib                                         1.3.2  h25fd6f3_3            conda-forge     Cached
+  + libgomp                                        16.2.0  he0feb66_7            conda-forge     Cached
+  + libopentelemetry-cpp-headers                   1.30.0  ha770c72_1            conda-forge     Cached
+  + nlohmann_json                                  3.12.0  h54a6638_2            conda-forge     Cached
+  + zlib                                            1.3.2  h25fd6f3_3            conda-forge     Cached
+  + zstd                                            1.5.7  hb78ec9c_7            conda-forge     Cached
+  + _openmp_mutex                                     4.5  20_gnu                conda-forge     Cached
+  + ld_impl_linux-64                               2.46.1  default_hbd61a6d_103  conda-forge     Cached
+  + libgcc                                         16.2.0  ha9f2e26_7            conda-forge     Cached
+  + libcap                                           2.78  h084b8d7_1            conda-forge     Cached
+  + libgfortran5                                   16.2.0  h6b99dfc_7            conda-forge     Cached
+  + libwebp-base                                    1.6.0  hd42ef1d_1            conda-forge     Cached
+  + xorg-libxdmcp                                   1.1.5  h7cc23a3_2            conda-forge     Cached
+  + xorg-libxau                                    1.0.12  h7cc23a3_2            conda-forge     Cached
+  + pthread-stubs                                     0.4  h7cc23a3_1004         conda-forge     Cached
+  + aws-c-common                                    1.0.5  hebe6cf0_0            conda-forge     Cached
+  + xorg-libice                                     1.1.2  h280c20c_0            conda-forge     Cached
+  + libev                                            4.33  h280c20c_3            conda-forge     Cached
+  + libpng                                         1.6.59  h922cc85_0            conda-forge     Cached
+  + libjpeg-turbo                                   3.2.1  h7cc23a3_0            conda-forge     Cached
+  + giflib                                          6.1.3  hebe6cf0_2            conda-forge     Cached
+  + alsa-lib                                     1.2.16.1  h7cc23a3_1            conda-forge     Cached
+  + tk                                             8.6.13  noxft_h1df4ec4_4      conda-forge     Cached
+  + libuuid                                        2.42.4  hcfc3c73_1            conda-forge     Cached
+  + libmpdec                                        4.0.0  hb03c661_2            conda-forge     Cached
+  + libffi                                          3.7.0  h81df57d_1            conda-forge     Cached
+  + libexpat                                        2.9.0  hd2095e1_0            conda-forge     Cached
+  + xxhash                                          0.8.3  hec8ed23_1            conda-forge     Cached
+  + yaml                                            0.2.5  hebe6cf0_3            conda-forge     Cached
+  + libgcc-ng                                      16.2.0  h69a702a_7            conda-forge     Cached
+  + libbrotlicommon                                 1.2.1  h39a168f_0            conda-forge     Cached
+  + libutf8proc                                    2.11.3  hfe17d71_0            conda-forge     Cached
+  + libpython                                     3.14.10  hd51c5da_100_cp314    conda-forge     Cached
+  + keyutils                                        1.6.3  h7cc23a3_1            conda-forge     Cached
+  + c-ares                                         1.34.9  hebe6cf0_0            conda-forge     Cached
+  + libiconv                                         1.18  h0cb94f2_3            conda-forge     Cached
+  + openssl                                         3.6.5  h781a0a9_0            conda-forge     Cached
+  + liblzma                                         5.8.3  hb03c661_1            conda-forge     Cached
+  + libdeflate                                       1.25  hd45a770_1            conda-forge     Cached
+  + bzip2                                           1.0.8  hda65f42_10           conda-forge     Cached
+  + ncurses                                           6.6  hdb14827_1            conda-forge     Cached
+  + libstdcxx                                      16.2.0  h934c35e_7            conda-forge     Cached
+  + pigz                                              2.8  h421ea60_2            conda-forge     Cached
+  + isa-l                                          2.32.1  hb03c661_0            conda-forge     Cached
+  + libxcrypt                                      4.4.38  h280c20c_0            conda-forge     Cached
+  + libsystemd0                                     262.2  h26e0ef7_0            conda-forge     Cached
+  + libgfortran                                    16.2.0  h69a702a_7            conda-forge     Cached
+  + libxcb                                         1.17.0  hb83e432_2            conda-forge     Cached
+  + aws-c-sdkutils                                  1.0.1  ha404f16_0            conda-forge     Cached
+  + aws-c-compression                               1.0.0  ha404f16_1            conda-forge     Cached
+  + aws-checksums                                   1.0.1  ha404f16_0            conda-forge     Cached
+  + libfreetype6                                   2.14.3  h5e6c136_2            conda-forge     Cached
+  + xorg-libsm                                      1.2.6  h0d788c3_1            conda-forge     Cached
+  + libbrotlienc                                    1.2.1  h018ffa1_0            conda-forge     Cached
+  + libbrotlidec                                    1.2.1  ha411449_0            conda-forge     Cached
+  + libevent                                       2.1.12  h5348a74_2            conda-forge     Cached
+  + aws-c-cal                                       1.0.0  hcf7459e_1            conda-forge     Cached
+  + s2n                                             1.7.7  ha5dc4ae_0            conda-forge     Cached
+  + libssh2                                        1.11.1  h6154650_1            conda-forge     Cached
+  + pcre2                                           10.47  h8b3dc9c_1            conda-forge     Cached
+  + readline                                          8.3  hd6e31c0_1            conda-forge     Cached
+  + libedit                                  3.1.20260512  pl5321h373387f_0      conda-forge     Cached
+  + lerc                                            4.3.0  he78707d_0            conda-forge     Cached
+  + pixman                                         0.46.4  h54a6638_3            conda-forge     Cached
+  + gflags                                          2.3.1  h54a6638_0            conda-forge     Cached
+  + snappy                                          1.2.2  h34e00bb_2            conda-forge     Cached
+  + lz4-c                                          1.10.0  hee9eb32_2            conda-forge     Cached
+  + libabseil                                  20260817.0  cxx17_hbb87c76_2      conda-forge     Cached
+  + graphite2                                      1.3.15  h54a6638_1            conda-forge     Cached
+  + libstdcxx-ng                                   16.2.0  hdf11a46_7            conda-forge     Cached
+  + simdjson                                        5.1.1  h4dbf13b_0            conda-forge     Cached
+  + libnghttp2                                     1.71.0  hc5e5977_0            conda-forge     Cached
+  + icu                                              78.3  py310h44b86e0_2       conda-forge     Cached
+  + libhwy                                          1.3.0  h4c17acf_1            conda-forge     Cached
+  + ossuuid                                         1.6.2  h5888daf_1001         conda-forge     Cached
+  + perl                                           5.32.1  10_h7cc23a3_perl5     conda-forge     Cached
+  + libsystemd                                      262.2  h26e0ef7_0            conda-forge     Cached
+  + libopenblas                                    0.3.34  pthreads_hf13c14d_2   conda-forge     Cached
+  + xorg-libx11                                    1.8.14  hb83e432_0            conda-forge     Cached
+  + libfreetype                                    2.14.3  ha770c72_2            conda-forge     Cached
+  + libthrift                                      0.25.0  h22fcfe2_1            conda-forge     Cached
+  + aws-c-io                                        1.0.0  h07ba609_0            conda-forge     Cached
+  + libglib                                        2.90.0  h569388d_0            conda-forge     Cached
+  + krb5                                           1.22.2  hbc21106_2            conda-forge     Cached
+  + libtiff                                         4.7.2  hcc2c06a_1            conda-forge     Cached
+  + glog                                            0.7.1  hb7133d2_1            conda-forge     Cached
+  + libre2-11                                  2025.11.05  h02ca46f_3            conda-forge     Cached
+  + libprotobuf                                    7.35.1  h8a00109_4            conda-forge     Cached
+  + libcrc32c                                       1.1.2  h9c3ff4c_0            conda-forge     Cached
+  + uriparser                                       0.9.8  hac33072_0            conda-forge     Cached
+  + libsqlite                                      3.54.1  h13e7031_0            conda-forge     Cached
+  + libpsl                                         0.23.1  hd9e3e90_1            conda-forge     Cached
+  + libxml2-16                                     2.14.6  hca6bf5a_3            conda-forge     Cached
+  + perl-capture-tiny                                0.48  pl5321ha770c72_1      conda-forge     Cached
+  + libblas                                        3.11.0  12_h4a7cf45_openblas  conda-forge     Cached
+  + xorg-libxfixes                                  6.0.2  h7cc23a3_1            conda-forge     Cached
+  + xorg-libxt                                      1.3.1  h7cc23a3_1            conda-forge     Cached
+  + xorg-libxrender                                0.9.13  h7cc23a3_0            conda-forge     Cached
+  + xorg-libxext                                    1.3.7  h7cc23a3_1            conda-forge     Cached
+  + fontconfig                                     2.18.3  h4db4eae_1            conda-forge     Cached
+  + aws-c-http                                      1.0.0  h392d1a3_1            conda-forge     Cached
+  + aws-c-event-stream                              1.0.0  h0f17bb3_1            conda-forge     Cached
+  + libcups                                         2.3.3  h7a8fb5f_6            conda-forge     Cached
+  + lcms2                                            2.20  h9073bf1_0            conda-forge     Cached
+  + re2                                        2025.11.05  hbf548d4_3            conda-forge     Cached
+  + orc                                             2.3.1  hdc56c17_1            conda-forge     Cached
+  + python                                        3.14.10  hcd007b5_100_cp314    conda-forge     Cached
+  + libcurl                                        8.23.0  ha042cf0_0            conda-forge     Cached
+  + libxml2                                        2.14.6  he237659_3            conda-forge     Cached
+  + libcblas                                       3.11.0  12_h0358290_openblas  conda-forge     Cached
+  + liblapack                                      3.11.0  12_h47877c9_openblas  conda-forge     Cached
+  + xorg-libxrandr                                  1.5.5  h7cc23a3_1            conda-forge     Cached
+  + xorg-libxi                                      1.8.4  h7cc23a3_0            conda-forge     Cached
+  + cairo                                          1.18.6  h3c89d7e_0            conda-forge     Cached
+  + aws-c-mqtt                                      1.0.0  h079ad5d_1            conda-forge     Cached
+  + aws-c-auth                                      1.0.0  h7648d90_2            conda-forge     Cached
+  + libgrpc                                        1.85.1  hcdf7605_0            conda-forge     Cached
+  + prometheus-cpp                                  1.3.0  h26ae035_1            conda-forge     Cached
+  + azure-core-cpp                                 1.16.3  h206d751_0            conda-forge     Cached
+  + curl                                           8.23.0  ha042cf0_0            conda-forge     Cached
+  + xorg-libxtst                                    1.2.6  h7cc23a3_0            conda-forge     Cached
+  + libharfbuzz                                    15.0.0  h23af247_0            conda-forge     Cached
+  + aws-c-s3                                        1.1.3  hfe03eda_0            conda-forge     Cached
+  + libopentelemetry-cpp                           1.30.0  hf0afa18_1            conda-forge     Cached
+  + azure-storage-common-cpp                      12.14.0  hf596fc9_1            conda-forge     Cached
+  + azure-identity-cpp                             1.13.3  h71f81a8_2            conda-forge     Cached
+  + openjdk                                        25.0.2  h1602c4f_26           conda-forge     Cached
+  + aws-crt-cpp                                    0.43.8  h2cbb7a3_2            conda-forge     Cached
+  + libgoogle-cloud                                3.12.0  h11de800_2            conda-forge     Cached
+  + azure-storage-blobs-cpp                       12.18.0  h74b55db_1            conda-forge     Cached
+  + aws-sdk-cpp                                  1.11.905  h2d7975d_1            conda-forge     Cached
+  + libgoogle-cloud-storage                        3.12.0  hc022eae_2            conda-forge     Cached
+  + azure-storage-files-datalake-cpp              12.16.0  h1f05bef_1            conda-forge     Cached
+  + libarrow                                       26.0.1  h4d31668_0_cpu        conda-forge     Cached
+  + libarrow-compute                               26.0.1  h2e1e52a_0_cpu        conda-forge     Cached
+  + libparquet                                     26.0.1  h2d6894f_0_cpu        conda-forge     Cached
+  + libarrow-s3                                    26.0.1  hb32f990_0_cpu        conda-forge     Cached
+  + libarrow-acero                                 26.0.1  h35cad7b_0_cpu        conda-forge     Cached
+  + libarrow-dataset                               26.0.1  h35cad7b_0_cpu        conda-forge     Cached
+  + libarrow-substrait                             26.0.1  hbad6200_0_cpu        conda-forge     Cached
+  + fastp                                           1.4.0  h43da1c4_0            bioconda        Cached
+  + htslib                                           1.25  ha79157c_0            bioconda        Cached
+  + samtools                                         1.25  h9dcdb79_0            bioconda        Cached
+  + bbmap                                           40.05  h09cc210_0            bioconda        Cached
+  + perl-extutils-makemaker                          7.70  pl5321hd8ed1ab_0      conda-forge     Cached
+  + perl-parent                                     0.243  pl5321hd8ed1ab_0      conda-forge     Cached
+  + perl-exporter                                    5.74  pl5321hd8ed1ab_0      conda-forge     Cached
+  + perl-constant                                    1.33  pl5321hd8ed1ab_0      conda-forge     Cached
+  + perl-xml-sax-base                                1.09  pl5321hd8ed1ab_0      conda-forge     Cached
+  + perl-path-tiny                                  0.150  pl5321hd8ed1ab_0      conda-forge     Cached
+  + perl-file-which                                  1.24  pl5321hd8ed1ab_0      conda-forge     Cached
+  + perl-scope-guard                                 0.21  pl5321hd8ed1ab_0      conda-forge     Cached
+  + perl-importer                                   0.026  pl5321hd8ed1ab_0      conda-forge     Cached
+  + pip                                            26.2.2  pyh145f28c_2          conda-forge     Cached
+  + perl-file-path                                   2.18  pl5321hd8ed1ab_0      conda-forge     Cached
+  + perl-carp                                        1.50  pl5321hd8ed1ab_0      conda-forge     Cached
+  + perl-xml-namespacesupport                        1.12  pl5321hd8ed1ab_0      conda-forge     Cached
+  + cpython                                       3.14.10  py314hd8ed1ab_100     conda-forge     Cached
+  + truststore                                     0.10.5  pyh5ded981_0          conda-forge     Cached
+  + click                                           8.5.0  pyh5ded981_0          conda-forge     Cached
+  + python-tzdata                                  2026.6  pyh5ded981_0          conda-forge     Cached
+  + idna                                             3.20  pyh5ded981_0          conda-forge     Cached
+  + tqdm                                           4.70.1  pyhfa0c392_0          conda-forge     Cached
+  + fsspec                                       2026.7.0  pyhd8ed1ab_0          conda-forge     Cached
+  + packaging                                        26.3  pyhc364b38_0          conda-forge     Cached
+  + filelock                                        4.2.9  pyh5ded981_0          conda-forge     Cached
+  + dill                                            0.4.1  pyhcf101f3_0          conda-forge     Cached
+  + aiohappyeyeballs                                2.7.1  pyhd8ed1ab_0          conda-forge     Cached
+  + typing_extensions                              4.16.0  pyhcf101f3_0          conda-forge     Cached
+  + attrs                                          26.1.0  pyhcf101f3_0          conda-forge     Cached
+  + perl-business-isbn-data                  20210112.006  pl5321hd8ed1ab_0      conda-forge     Cached
+  + perl-file-temp                                 0.2304  pl5321hd8ed1ab_0      conda-forge     Cached
+  + perl-sub-info                                   0.002  pl5321hd8ed1ab_0      conda-forge     Cached
+  + python-gil                                    3.14.10  h4df99d1_100          conda-forge     Cached
+  + python-dateutil                                 4.0.0  pyh5ded981_0          conda-forge     Cached
+  + h11                                            0.16.0  pyhcf101f3_1          conda-forge     Cached
+  + anyio                                          4.16.0  pyh5ded981_1          conda-forge     Cached
+  + perl-business-isbn                              3.007  pl5321hd8ed1ab_0      conda-forge     Cached
+  + perl-xml-sax                                     1.02  pl5321hd8ed1ab_0      conda-forge     Cached
+  + _python_abi3_support                              1.0  hd8ed1ab_3            conda-forge     Cached
+  + httpcore2                                      2.16.0  pyh5ded981_0          conda-forge     Cached
+  + perl-uri                                         5.40  pl5321h707e725_0      conda-forge     Cached
+  + httpx2                                         2.16.0  pyh4fe4dc5_0          conda-forge     Cached
+  + perl-ffi-checklib                                0.31  pl5321hdfd78af_0      bioconda        Cached
+  + perl-term-table                                 0.028  pl5321hdfd78af_0      bioconda        Cached
+  + perl-test2-suite                             0.000163  pl5321hdfd78af_0      bioconda        Cached
+  + frozenlist                                      1.8.0  py314h2073b0b_1       conda-forge     Cached
+  + pyarrow-core                                   26.0.1  py314hb474575_0_cpu   conda-forge     Cached
+  + pyyaml                                          6.0.3  py314h19d427c_3       conda-forge     Cached
+  + python-xxhash                                   3.7.0  py314hc7863f8_1       conda-forge     Cached
+  + numpy                                           2.5.4  py314hd3a7d6b_0       conda-forge     Cached
+  + propcache                                       0.5.4  py314hd42368d_2       conda-forge     Cached
+  + multidict                                       7.2.1  py314hd42368d_0       conda-forge     Cached
+  + perl-pathtools                                   3.75  pl5321hb9d3cd8_2      conda-forge     Cached
+  + multiprocess                                  0.70.19  py314hfe1a184_1       conda-forge     Cached
+  + hf-xet                                          1.8.0  py311h30674b1_0       conda-forge     Cached
+  + pyarrow                                        26.0.1  py314hdafbbf9_0       conda-forge     Cached
+  + pandas                                          3.1.1  np2py314h9e1d7c2_0    conda-forge     Cached
+  + yarl                                           1.25.1  py314hd42368d_0       conda-forge     Cached
+  + aiosignal                                       1.4.0  pyhd8ed1ab_0          conda-forge     Cached
+  + perl-file-chdir                                0.1011  pl5321hd8ed1ab_0      conda-forge     Cached
+  + huggingface_hub                                 2.4.0  pyh5ded981_0          conda-forge     Cached
+  + aiohttp                                        3.14.5  py314h93e9acf_0       conda-forge     Cached
+  + perl-alien-build                                 2.88  pl5321hab16a5f_0      bioconda        Cached
+  + datasets                                        5.1.0  pyh5ded981_0          conda-forge     Cached
+  + perl-alien-build-plugin-download-gitlab          0.01  pl5321hdfd78af_0      bioconda        Cached
+  + perl-alien-libxml2                               0.20  pl5321hd2ab53c_0      bioconda        Cached
+  + perl-xml-libxml                                2.0210  pl5321hd2ab53c_1      bioconda        Cached
+  + sra-tools                                       3.4.1  2_linux_64            bioconda        Cached
+
+  Summary:
+
+  Install: 218 packages
+
+  Total download: 0 B
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+Looking for: ['datasets', 'sra-tools', 'bbmap', 'samtools', 'fastp', 'pigz']
+
+
+Downloading and Extracting Packages: ...working... done
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+
+To activate this environment, use
+
+     $ mamba activate assignment_07_env
+
+To deactivate an active environment, use
+
+     $ mamba deactivate
+
+datasets version: 18.37.0
+srapath : 3.4.1
+
+40.05
+samtools 1.25
+Using htslib 1.25
+Copyright (C) 2026 Genome Research Ltd.
+
+Samtools compilation details:
+    Features:       build=configure curses=yes 
+    CC:             x86_64-conda-linux-gnu-cc -std=gnu23
+    CPPFLAGS:       -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /sciclone/home/jbusbin/.conda/envs/assignment_07_env/include
+    CFLAGS:         -Wall -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -fno-merge-constants -isystem /sciclone/home/jbusbin/.conda/envs/assignment_07_env/include -fdebug-prefix-map=/opt/conda/conda-bld/samtools_1793107535567/work=/usr/local/src/conda/samtools-1.25 -fdebug-prefix-map=/sciclone/home/jbusbin/.conda/envs/assignment_07_env=/usr/local/src/conda-prefix
+    LDFLAGS:        -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/sciclone/home/jbusbin/.conda/envs/assignment_07_env/lib -Wl,-rpath-link,/sciclone/home/jbusbin/.conda/envs/assignment_07_env/lib -L/sciclone/home/jbusbin/.conda/envs/assignment_07_env/lib
+    HTSDIR:         
+    LIBS:           
+    CURSES_LIB:     -ltinfow -lncursesw
+
+HTSlib compilation details:
+    Features:       build=configure libcurl=yes S3=yes GCS=yes libdeflate=yes lzma=yes bzip2=yes plugins=yes plugin-path=/sciclone/home/jbusbin/.conda/envs/assignment_07_env/libexec/htslib htscodecs=1.6.7
+    CC:             x86_64-conda-linux-gnu-cc -std=gnu23
+    CPPFLAGS:       -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /sciclone/home/jbusbin/.conda/envs/assignment_07_env/include
+    CFLAGS:         -Wall -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -fno-merge-constants -isystem /sciclone/home/jbusbin/.conda/envs/assignment_07_env/include -fdebug-prefix-map=/opt/conda/conda-bld/htslib_1793104724132/work=/usr/local/src/conda/htslib-1.25 -fdebug-prefix-map=/sciclone/home/jbusbin/.conda/envs/assignment_07_env=/usr/local/src/conda-prefix -fvisibility=hidden
+    LDFLAGS:        -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/sciclone/home/jbusbin/.conda/envs/assignment_07_env/lib -Wl,-rpath-link,/sciclone/home/jbusbin/.conda/envs/assignment_07_env/lib -L/sciclone/home/jbusbin/.conda/envs/assignment_07_env/lib -fvisibility=hidden -rdynamic
+
+HTSlib URL scheme handlers present:
+    built-in:	 file, preload, data
+    Amazon S3:	 s3+https, s3, s3+http
+    libcurl:	 gophers, smtp, wss, rtsp, tftp, mqtts, pop3, imaps, pop3s, ws, ftps, https, ftp, gopher, sftp, imap, http, smtps, scp, dict, mqtt, telnet
+    Google Cloud Storage:	 gs+http, gs+https, gs
+    crypt4gh-needed:	 crypt4gh
+    mem:	 mem
+fastp 1.4.0
+pigz 2.8
+Initializing HPC storage directories...
+Linking ./data to scratch drive...
+Linking ./output to scratch drive...
+Workspace initialized. ./data and ./output are now routed to scratch.
+==> [1/3] Prefetching: ERR16891046
+2026-11-07T00:49:58 prefetch.3.4.1: 1) Resolving 'ERR16891046'...
+2026-11-07T00:49:59 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-11-07T00:50:00 prefetch.3.4.1: 1) Downloading 'ERR16891046'...
+2026-11-07T00:50:00 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-11-07T00:50:00 prefetch.3.4.1:  Downloading via HTTPS...
+2026-11-07T00:51:11 prefetch.3.4.1:  HTTPS download succeed
+2026-11-07T00:51:21 prefetch.3.4.1:  'ERR16891046' is valid: 3614826839 bytes were streamed from 3614824434
+2026-11-07T00:51:21 prefetch.3.4.1: 1) 'ERR16891046' was downloaded successfully
+2026-11-07T00:51:21 prefetch.3.4.1: 1) Resolving 'ERR16891046's dependencies...
+2026-11-07T00:51:21 prefetch.3.4.1: 'ERR16891046' has 0 unresolved dependencies
+==> [2/3] Extracting FASTQ: ERR16891046
+==> [3/3] Compressing and renaming: ERR16891046
+==> [1/3] Prefetching: ERR16891055
+2026-11-07T01:03:22 prefetch.3.4.1: 1) Resolving 'ERR16891055'...
+2026-11-07T01:03:24 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-11-07T01:03:24 prefetch.3.4.1: 1) Downloading 'ERR16891055'...
+2026-11-07T01:03:24 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-11-07T01:03:24 prefetch.3.4.1:  Downloading via HTTPS...
+2026-11-07T01:04:48 prefetch.3.4.1:  HTTPS download succeed
+2026-11-07T01:05:00 prefetch.3.4.1:  'ERR16891055' is valid: 4493103199 bytes were streamed from 4493096414
+2026-11-07T01:05:00 prefetch.3.4.1: 1) 'ERR16891055' was downloaded successfully
+2026-11-07T01:05:00 prefetch.3.4.1: 1) Resolving 'ERR16891055's dependencies...
+2026-11-07T01:05:00 prefetch.3.4.1: 'ERR16891055' has 0 unresolved dependencies
+==> [2/3] Extracting FASTQ: ERR16891055
+==> [3/3] Compressing and renaming: ERR16891055
+==> [1/3] Prefetching: ERR16898309
+2026-11-07T01:21:43 prefetch.3.4.1: 1) Resolving 'ERR16898309'...
+2026-11-07T01:21:44 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-11-07T01:21:44 prefetch.3.4.1: 1) Downloading 'ERR16898309'...
+2026-11-07T01:21:44 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-11-07T01:21:44 prefetch.3.4.1:  Downloading via HTTPS...
+2026-11-07T01:22:45 prefetch.3.4.1:  HTTPS download succeed
+2026-11-07T01:22:53 prefetch.3.4.1:  'ERR16898309' is valid: 2945301536 bytes were streamed from 2945285394
+2026-11-07T01:22:53 prefetch.3.4.1: 1) 'ERR16898309' was downloaded successfully
+2026-11-07T01:22:53 prefetch.3.4.1: 1) Resolving 'ERR16898309's dependencies...
+2026-11-07T01:22:53 prefetch.3.4.1: 'ERR16898309' has 0 unresolved dependencies
+==> [2/3] Extracting FASTQ: ERR16898309
+==> [3/3] Compressing and renaming: ERR16898309
+==> [1/3] Prefetching: ERR16898311
+2026-11-07T01:31:06 prefetch.3.4.1: 1) Resolving 'ERR16898311'...
+2026-11-07T01:31:07 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-11-07T01:31:07 prefetch.3.4.1: 1) Downloading 'ERR16898311'...
+2026-11-07T01:31:07 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-11-07T01:31:07 prefetch.3.4.1:  Downloading via HTTPS...
+2026-11-07T01:32:01 prefetch.3.4.1:  HTTPS download succeed
+2026-11-07T01:32:09 prefetch.3.4.1:  'ERR16898311' is valid: 2847709276 bytes were streamed from 2847705654
+2026-11-07T01:32:09 prefetch.3.4.1: 1) 'ERR16898311' was downloaded successfully
+2026-11-07T01:32:09 prefetch.3.4.1: 1) Resolving 'ERR16898311's dependencies...
+2026-11-07T01:32:09 prefetch.3.4.1: 'ERR16898311' has 0 unresolved dependencies
+==> [2/3] Extracting FASTQ: ERR16898311
+==> [3/3] Compressing and renaming: ERR16898311
+==> [1/3] Prefetching: SRR33545155
+2026-11-07T01:40:17 prefetch.3.4.1: 1) Resolving 'SRR33545155'...
+2026-11-07T01:40:18 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-11-07T01:40:18 prefetch.3.4.1: 1) Downloading 'SRR33545155'...
+2026-11-07T01:40:18 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-11-07T01:40:18 prefetch.3.4.1:  Downloading via HTTPS...
+2026-11-07T01:40:59 prefetch.3.4.1:  HTTPS download succeed
+2026-11-07T01:41:05 prefetch.3.4.1:  'SRR33545155' is valid: 2409102218 bytes were streamed from 2409092414
+2026-11-07T01:41:05 prefetch.3.4.1: 1) 'SRR33545155' was downloaded successfully
+2026-11-07T01:41:05 prefetch.3.4.1: 1) Resolving 'SRR33545155's dependencies...
+2026-11-07T01:41:05 prefetch.3.4.1: 'SRR33545155' has 0 unresolved dependencies
+==> [2/3] Extracting FASTQ: SRR33545155
+==> [3/3] Compressing and renaming: SRR33545155
+==> [1/3] Prefetching: SRR29324611
+2026-11-07T01:47:15 prefetch.3.4.1: 1) Resolving 'SRR29324611'...
+2026-11-07T01:47:16 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-11-07T01:47:16 prefetch.3.4.1: 1) Downloading 'SRR29324611'...
+2026-11-07T01:47:16 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-11-07T01:47:16 prefetch.3.4.1:  Downloading via HTTPS...
+2026-11-07T01:48:31 prefetch.3.4.1:  HTTPS download succeed
+2026-11-07T01:48:42 prefetch.3.4.1:  'SRR29324611' is valid: 4075840238 bytes were streamed from 4075835280
+2026-11-07T01:48:42 prefetch.3.4.1: 1) 'SRR29324611' was downloaded successfully
+2026-11-07T01:48:42 prefetch.3.4.1: 1) Resolving 'SRR29324611's dependencies...
+2026-11-07T01:48:42 prefetch.3.4.1: 'SRR29324611' has 0 unresolved dependencies
+==> [2/3] Extracting FASTQ: SRR29324611
+==> [3/3] Compressing and renaming: SRR29324611
+==> [1/3] Prefetching: SRR17622020
+2026-11-07T02:03:13 prefetch.3.4.1: 1) Resolving 'SRR17622020'...
+2026-11-07T02:03:14 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-11-07T02:03:14 prefetch.3.4.1: 1) Downloading 'SRR17622020'...
+2026-11-07T02:03:14 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-11-07T02:03:14 prefetch.3.4.1:  Downloading via HTTPS...
+2026-11-07T02:04:01 prefetch.3.4.1:  HTTPS download succeed
+2026-11-07T02:04:08 prefetch.3.4.1:  'SRR17622020' is valid: 2552091121 bytes were streamed from 2552084452
+2026-11-07T02:04:08 prefetch.3.4.1: 1) 'SRR17622020' was downloaded successfully
+2026-11-07T02:04:08 prefetch.3.4.1: 1) Resolving 'SRR17622020's dependencies...
+2026-11-07T02:04:08 prefetch.3.4.1: 'SRR17622020' has 0 unresolved dependencies
+==> [2/3] Extracting FASTQ: SRR17622020
+==> [3/3] Compressing and renaming: SRR17622020
+==> [1/3] Prefetching: SRR17622021
+2026-11-07T02:08:44 prefetch.3.4.1: 1) Resolving 'SRR17622021'...
+2026-11-07T02:08:46 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-11-07T02:08:46 prefetch.3.4.1: 1) Downloading 'SRR17622021'...
+2026-11-07T02:08:46 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-11-07T02:08:46 prefetch.3.4.1:  Downloading via HTTPS...
+2026-11-07T02:09:30 prefetch.3.4.1:  HTTPS download succeed
+2026-11-07T02:09:36 prefetch.3.4.1:  'SRR17622021' is valid: 2458508186 bytes were streamed from 2458493452
+2026-11-07T02:09:36 prefetch.3.4.1: 1) 'SRR17622021' was downloaded successfully
+2026-11-07T02:09:36 prefetch.3.4.1: 1) Resolving 'SRR17622021's dependencies...
+2026-11-07T02:09:36 prefetch.3.4.1: 'SRR17622021' has 0 unresolved dependencies
+==> [2/3] Extracting FASTQ: SRR17622021
+==> [3/3] Compressing and renaming: SRR17622021
+==> [1/3] Prefetching: SRR17622022
+2026-11-07T02:14:13 prefetch.3.4.1: 1) Resolving 'SRR17622022'...
+2026-11-07T02:14:14 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-11-07T02:14:14 prefetch.3.4.1: 1) Downloading 'SRR17622022'...
+2026-11-07T02:14:14 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-11-07T02:14:14 prefetch.3.4.1:  Downloading via HTTPS...
+2026-11-07T02:15:03 prefetch.3.4.1:  HTTPS download succeed
+2026-11-07T02:15:10 prefetch.3.4.1:  'SRR17622022' is valid: 2467624784 bytes were streamed from 2467610452
+2026-11-07T02:15:10 prefetch.3.4.1: 1) 'SRR17622022' was downloaded successfully
+2026-11-07T02:15:10 prefetch.3.4.1: 1) Resolving 'SRR17622022's dependencies...
+2026-11-07T02:15:10 prefetch.3.4.1: 'SRR17622022' has 0 unresolved dependencies
+==> [2/3] Extracting FASTQ: SRR17622022
+==> [3/3] Compressing and renaming: SRR17622022
+==> [1/3] Prefetching: SRR28211885
+2026-11-07T02:19:55 prefetch.3.4.1: 1) Resolving 'SRR28211885'...
+2026-11-07T02:19:56 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-11-07T02:19:57 prefetch.3.4.1: 1) Downloading 'SRR28211885'...
+2026-11-07T02:19:57 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-11-07T02:19:57 prefetch.3.4.1:  Downloading via HTTPS...
+2026-11-07T02:22:09 prefetch.3.4.1:  HTTPS download succeed
+2026-11-07T02:22:28 prefetch.3.4.1:  'SRR28211885' is valid: 7121157902 bytes were streamed from 7121143382
+2026-11-07T02:22:28 prefetch.3.4.1: 1) 'SRR28211885' was downloaded successfully
+2026-11-07T02:22:28 prefetch.3.4.1: 1) Resolving 'SRR28211885's dependencies...
+2026-11-07T02:22:28 prefetch.3.4.1: 'SRR28211885' has 0 unresolved dependencies
+==> [2/3] Extracting FASTQ: SRR28211885
+==> [3/3] Compressing and renaming: SRR28211885
+==> [1/3] Prefetching: ERR13865292
+2026-11-07T02:50:39 prefetch.3.4.1: 1) Resolving 'ERR13865292'...
+2026-11-07T02:50:40 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-11-07T02:50:40 prefetch.3.4.1: 1) Downloading 'ERR13865292'...
+2026-11-07T02:50:40 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-11-07T02:50:40 prefetch.3.4.1:  Downloading via HTTPS...
+2026-11-07T02:50:49 prefetch.3.4.1:  HTTPS download succeed
+2026-11-07T02:50:50 prefetch.3.4.1:  'ERR13865292' is valid: 445119803 bytes were streamed from 445119780
+2026-11-07T02:50:50 prefetch.3.4.1: 1) 'ERR13865292' was downloaded successfully
+2026-11-07T02:50:50 prefetch.3.4.1: 1) Resolving 'ERR13865292's dependencies...
+2026-11-07T02:50:50 prefetch.3.4.1: 'ERR13865292' has 0 unresolved dependencies
+==> [2/3] Extracting FASTQ: ERR13865292
+==> [3/3] Compressing and renaming: ERR13865292
+==> [1/3] Prefetching: ERR13865300
+2026-11-07T02:51:21 prefetch.3.4.1: 1) Resolving 'ERR13865300'...
+2026-11-07T02:51:22 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-11-07T02:51:22 prefetch.3.4.1: 1) Downloading 'ERR13865300'...
+2026-11-07T02:51:23 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-11-07T02:51:23 prefetch.3.4.1:  Downloading via HTTPS...
+2026-11-07T02:51:25 prefetch.3.4.1:  HTTPS download succeed
+2026-11-07T02:51:25 prefetch.3.4.1:  'ERR13865300' is valid: 58358233 bytes were streamed from 58356392
+2026-11-07T02:51:25 prefetch.3.4.1: 1) 'ERR13865300' was downloaded successfully
+2026-11-07T02:51:25 prefetch.3.4.1: 1) Resolving 'ERR13865300's dependencies...
+2026-11-07T02:51:25 prefetch.3.4.1: 'ERR13865300' has 0 unresolved dependencies
+==> [2/3] Extracting FASTQ: ERR13865300
+==> [3/3] Compressing and renaming: ERR13865300
+==> [1/3] Prefetching: ERR13865299
+2026-11-07T02:51:29 prefetch.3.4.1: 1) Resolving 'ERR13865299'...
+2026-11-07T02:51:30 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-11-07T02:51:30 prefetch.3.4.1: 1) Downloading 'ERR13865299'...
+2026-11-07T02:51:30 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-11-07T02:51:30 prefetch.3.4.1:  Downloading via HTTPS...
+2026-11-07T02:51:39 prefetch.3.4.1:  HTTPS download succeed
+2026-11-07T02:51:40 prefetch.3.4.1:  'ERR13865299' is valid: 422740255 bytes were streamed from 422738596
+2026-11-07T02:51:40 prefetch.3.4.1: 1) 'ERR13865299' was downloaded successfully
+2026-11-07T02:51:40 prefetch.3.4.1: 1) Resolving 'ERR13865299's dependencies...
+2026-11-07T02:51:40 prefetch.3.4.1: 'ERR13865299' has 0 unresolved dependencies
+==> [2/3] Extracting FASTQ: ERR13865299
+==> [3/3] Compressing and renaming: ERR13865299
+==> [1/3] Prefetching: SRR14470682
+2026-11-07T02:52:10 prefetch.3.4.1: 1) Resolving 'SRR14470682'...
+2026-11-07T02:52:11 prefetch.3.4.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2026-11-07T02:52:11 prefetch.3.4.1: 1) Downloading 'SRR14470682'...
+2026-11-07T02:52:11 prefetch.3.4.1:  SRA Normalized Format file is being retrieved
+2026-11-07T02:52:11 prefetch.3.4.1:  Downloading via HTTPS...
+2026-11-07T02:52:48 prefetch.3.4.1:  HTTPS download succeed
+2026-11-07T02:52:53 prefetch.3.4.1:  'SRR14470682' is valid: 2164681052 bytes were streamed from 2164670452
+2026-11-07T02:52:53 prefetch.3.4.1: 1) 'SRR14470682' was downloaded successfully
+2026-11-07T02:52:53 prefetch.3.4.1: 1) Resolving 'SRR14470682's dependencies...
+2026-11-07T02:52:53 prefetch.3.4.1: 'SRR14470682' has 0 unresolved dependencies
+==> [2/3] Extracting FASTQ: SRR14470682
+==> [3/3] Compressing and renaming: SRR14470682
+==> SRA download completed. Compressed files saved to: ./data/raw
+Downloading Canis familiaris reference genome...
+Extracting reference genome...
+Moving and renaming FASTA file to ./data/dog_reference/canis_familiaris_reference_genome.fasta...
+Cleaning up temp files...
+Completed! Reference FASTA file is located at: ./data/dog_reference/canis_familiaris_reference_genome.fasta
+Processing file: ./data/raw/ERR16891046_R1.fastq.gz
+Processing file: ./data/raw/ERR16891055_R1.fastq.gz
+Processing file: ./data/raw/ERR16898309_R1.fastq.gz
+Processing file: ./data/raw/ERR16898311_R1.fastq.gz
+Processing file: ./data/raw/SRR33545155_R1.fastq.gz
+Processing file: ./data/raw/SRR29324611_R1.fastq.gz
+Processing file: ./data/raw/SRR17622020_R1.fastq.gz
+Processing file: ./data/raw/SRR17622021_R1.fastq.gz
+Processing file: ./data/raw/SRR17622022_R1.fastq.gz
+Processing file: ./data/raw/SRR28211885_R1.fastq.gz
+Processing file: ./data/raw/ERR13865292_R1.fastq.gz
+Processing file: ./data/raw/ERR13865300_R1.fastq.gz
+Processing file: ./data/raw/ERR13865299_R1.fastq.gz
+Processing file: ./data/raw/SRR14470682_R1.fastq.gz
+Making reference index...
+bbmaping sample: ERR16891046
+  R1: ./data/clean/ERR16891046_R1.trimmed.fastq.gz
+  R2: ./data/clean/ERR16891046_R2.trimmed.fastq.gz
+bbmaping of ERR16891046 complete.
+bbmaping sample: ERR16891055
+  R1: ./data/clean/ERR16891055_R1.trimmed.fastq.gz
+  R2: ./data/clean/ERR16891055_R2.trimmed.fastq.gz
+bbmaping of ERR16891055 complete.
+bbmaping sample: ERR16898309
+  R1: ./data/clean/ERR16898309_R1.trimmed.fastq.gz
+  R2: ./data/clean/ERR16898309_R2.trimmed.fastq.gz
+bbmaping of ERR16898309 complete.
+bbmaping sample: ERR16898311
+  R1: ./data/clean/ERR16898311_R1.trimmed.fastq.gz
+  R2: ./data/clean/ERR16898311_R2.trimmed.fastq.gz
+bbmaping of ERR16898311 complete.
+bbmaping sample: SRR33545155
+  R1: ./data/clean/SRR33545155_R1.trimmed.fastq.gz
+  R2: ./data/clean/SRR33545155_R2.trimmed.fastq.gz
+bbmaping of SRR33545155 complete.
+bbmaping sample: SRR29324611
+  R1: ./data/clean/SRR29324611_R1.trimmed.fastq.gz
+  R2: ./data/clean/SRR29324611_R2.trimmed.fastq.gz
+bbmaping of SRR29324611 complete.
+bbmaping sample: SRR17622020
+  R1: ./data/clean/SRR17622020_R1.trimmed.fastq.gz
+  R2: ./data/clean/SRR17622020_R2.trimmed.fastq.gz
+bbmaping of SRR17622020 complete.
+bbmaping sample: SRR17622021
+  R1: ./data/clean/SRR17622021_R1.trimmed.fastq.gz
+  R2: ./data/clean/SRR17622021_R2.trimmed.fastq.gz
+bbmaping of SRR17622021 complete.
+bbmaping sample: SRR17622022
+  R1: ./data/clean/SRR17622022_R1.trimmed.fastq.gz
+  R2: ./data/clean/SRR17622022_R2.trimmed.fastq.gz
+bbmaping of SRR17622022 complete.
+bbmaping sample: SRR28211885
+  R1: ./data/clean/SRR28211885_R1.trimmed.fastq.gz
+  R2: ./data/clean/SRR28211885_R2.trimmed.fastq.gz
+bbmaping of SRR28211885 complete.
+bbmaping sample: ERR13865292
+  R1: ./data/clean/ERR13865292_R1.trimmed.fastq.gz
+  R2: ./data/clean/ERR13865292_R2.trimmed.fastq.gz
+bbmaping of ERR13865292 complete.
+bbmaping sample: ERR13865300
+  R1: ./data/clean/ERR13865300_R1.trimmed.fastq.gz
+  R2: ./data/clean/ERR13865300_R2.trimmed.fastq.gz
+bbmaping of ERR13865300 complete.
+bbmaping sample: ERR13865299
+  R1: ./data/clean/ERR13865299_R1.trimmed.fastq.gz
+  R2: ./data/clean/ERR13865299_R2.trimmed.fastq.gz
+bbmaping of ERR13865299 complete.
+bbmaping sample: SRR14470682
+  R1: ./data/clean/SRR14470682_R1.trimmed.fastq.gz
+  R2: ./data/clean/SRR14470682_R2.trimmed.fastq.gz
+bbmaping of SRR14470682 complete.
+filtering sample: ./output/ERR16891046_dog_matches.bam for dog matches
+filtering sample: ./output/ERR16891055_dog_matches.bam for dog matches
+filtering sample: ./output/ERR16898309_dog_matches.bam for dog matches
+filtering sample: ./output/ERR16898311_dog_matches.bam for dog matches
+filtering sample: ./output/SRR33545155_dog_matches.bam for dog matches
+filtering sample: ./output/SRR29324611_dog_matches.bam for dog matches
+filtering sample: ./output/SRR17622020_dog_matches.bam for dog matches
+filtering sample: ./output/SRR17622021_dog_matches.bam for dog matches
+filtering sample: ./output/SRR17622022_dog_matches.bam for dog matches
+filtering sample: ./output/SRR28211885_dog_matches.bam for dog matches
+filtering sample: ./output/ERR13865292_dog_matches.bam for dog matches
+filtering sample: ./output/ERR13865300_dog_matches.bam for dog matches
+filtering sample: ./output/ERR13865299_dog_matches.bam for dog matches
+filtering sample: ./output/SRR14470682_dog_matches.bam for dog matches

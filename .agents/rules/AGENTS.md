@@ -19,8 +19,14 @@ This document outlines mandatory guidelines, execution policies, and operational
 
 - **Non-Destructive Operations**: NEVER execute destructive commands (e.g., `rm -rf`, sweeping deletions, `git reset --hard`, or `git clean -fd`) without explicit user permission.
 - **Resource Consciousness**: Run custom scripts or CLI tools with `--help` or inspect targeted sections first, rather than reading full large source or data files unnecessarily.
-- **Login Node Etiquette**: Strictly respect login node limits (memory and short CPU time limits, ~30s). NEVER execute compute-intensive commands, multi-threaded compilations, or benchmarks directly on login nodes; submit batch jobs (`sbatch`) or request an interactive allocation (`salloc` / `srun`).
-- **Cluster & Batch Safety**: Do NOT submit batch jobs (`sbatch`), launch long-running background tasks, or trigger intensive computational workloads without explicit instruction.
+- **Login Node Policy & Prohibition**: Per W&M Research Computing policy (10/20/26 update), AI coding agents and VS Code Server are STRICTLY PROHIBITED from running directly on Slurm or Kubernetes front-end/login nodes (e.g., `bora`, `femto`, etc.).
+- **Dev Server Boundaries (`dev.sciclone.wm.edu`)**:
+  - Interactive agent operations, remote editing, and job preparation must run on the dedicated development server (`dev.sciclone.wm.edu`) or within an interactive Slurm compute allocation.
+  - `dev` is a shared system, NOT a compute node: high CPU or memory usage will trigger automatic process termination. Never run multi-threaded compilations, model training, or data-heavy benchmarks locally on `dev`.
+  - Cache, extension, and temporary agent files MUST be placed in local node storage (`/local/<USER>`), NOT in shared NFS `$HOME`. Remember that `/local/<USER>` is unbacked up; keep critical code and results in repo/project storage.
+- **Slurm Cluster Selection & Default (`bora`)**: Slurm commands on `dev` are cluster-agnostic by default. Unless explicitly instructed otherwise, **always default to the `bora` cluster** by ensuring `module load slurm/bora` is active before submitting or inspecting jobs (`sinfo`, `squeue`, `sbatch`). Only switch to other cluster modules (e.g., `slurm/astral`, `slurm/femto`, `slurm/gulf`, `slurm/kuro`) when explicit GPU or alternative architecture resources are requested.
+- **Environment & Software Modules**: Use the Lmod module system (`module load python/3.12.7`, `module load miniforge3/24.9.2-0`, `module load uv/0.13.1`). Do not attempt system-level package installations.
+- **Cluster & Batch Safety**: Do NOT submit batch jobs (`sbatch`), launch long-running background tasks, or trigger intensive computational workloads without explicit instruction. For heavy agent testing, request an interactive compute allocation via `salloc`.
 - **Data Preservation**: NEVER overwrite, modify, or delete raw scientific datasets (e.g., `.fasta`, `.csv`, `.gz`), benchmark outputs, course assignment submissions, or Slurm logs (`.out`, `.err`) unless explicitly directed.
 - **Secrets & Credential Protection**: NEVER hardcode, commit, or log sensitive credentials, cluster passwords, personal access tokens, or private SSH keys.
 
